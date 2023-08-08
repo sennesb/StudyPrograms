@@ -8,9 +8,13 @@ using FakeXiecheng.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MySqlConnector;
+using Microsoft.AspNetCore.Mvc;
+using System.Text.Json.Serialization;
 
 namespace FakeXiecheng.API
 {
@@ -25,13 +29,28 @@ namespace FakeXiecheng.API
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            services.AddTransient<ITouristRouteRepository, TouristRouteRepository>();
-            services.AddDbContext<AppDbContext>(option => 
+           
+
+            services.AddControllers(setupAction =>
             {
-                //option.UseSqlServer("server=localhost; Database=FakeXiechengDb; User Id=SA; Password=PaSSword12!;");
-                option.UseSqlServer(Configuration["DbContext:ConnectionString"]);
+                setupAction.ReturnHttpNotAcceptable = true;//如果为false所有的api都会忽略请求的header，返回默认的数据结构json
+            }).AddXmlDataContractSerializerFormatters()//新版本实现对xml的支持
+            //忽略循环引用
+            .AddJsonOptions(options =>
+             {
+                 options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+             });
+            ;
+
+            services.AddTransient<ITouristRouteRepository, TouristRouteRepository>();
+            services.AddDbContext<AppDbContext>(options => 
+            {
+                //options.UseSqlServer("server=localhost; Database=FakeXiechengDb; User Id=SA; Password=PaSSword12!;");
+                options.UseSqlServer(Configuration["DbContext:ConnectionString"]);
+                //options.UseMySql(Configuration["DbContext:MysSQLConnectionString"],new MySqlServerVersion(new Version(8,0,27)));
             }) ;
+            //AutoMapper会自动扫描程序集所有包含映射关系的proflie文件，调用以下方法把profile文件加载到目前的AppDomain中
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

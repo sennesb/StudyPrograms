@@ -2,7 +2,7 @@
 
 namespace FakeXiecheng.API.Services
 {
-    public class MockTouristRouteRepository : ITouristRouteRepository
+/*    public class MockTouristRouteRepository : ITouristRouteRepository
     {
         private List<TouristRoute> _routes;
         public MockTouristRouteRepository()
@@ -48,5 +48,5 @@ namespace FakeXiecheng.API.Services
         {
             return _routes;
         }
-    }
+    }*/
 }

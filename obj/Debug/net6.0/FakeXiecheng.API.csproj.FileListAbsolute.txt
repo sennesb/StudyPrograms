@@ -83,3 +83,7 @@ E:\Visual Studio\Program\C#\Projects\WebApi\FakeXiecheng.API\obj\Debug\net6.0\Fa
 E:\Visual Studio\Program\C#\Projects\WebApi\FakeXiecheng.API\bin\Debug\net6.0\Database\touristRoutePicturesMockData.json
 E:\Visual Studio\Program\C#\Projects\WebApi\FakeXiecheng.API\bin\Debug\net6.0\Database\touristRoutesMockData.json
 E:\Visual Studio\Program\C#\Projects\WebApi\FakeXiecheng.API\bin\Debug\net6.0\Newtonsoft.Json.dll
+E:\Visual Studio\Program\C#\Projects\WebApi\FakeXiecheng.API\bin\Debug\net6.0\MySqlConnector.dll
+E:\Visual Studio\Program\C#\Projects\WebApi\FakeXiecheng.API\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+E:\Visual Studio\Program\C#\Projects\WebApi\FakeXiecheng.API\bin\Debug\net6.0\AutoMapper.dll
+E:\Visual Studio\Program\C#\Projects\WebApi\FakeXiecheng.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
