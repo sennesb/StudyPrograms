@@ -35,6 +35,32 @@ namespace FakeXiecheng.API.Profiles
                 opt => opt.MapFrom(src => src.DepartureCity.ToString())
                 );
 
+            CreateMap<TouristRoute, TouristRoutesListDto>().ForMember
+                (
+                dest => dest.Price,
+                opt => opt.MapFrom(src => src.OriginalPrice * (decimal)(src.DiscountPresent ?? 1))
+                );
+
+            CreateMap<TouristRouteForCreationDto, TouristRoute>()
+                .AddTransform<string>(s => s ?? string.Empty)
+                .ForMember
+                (
+                dest => dest.Id,
+                opt => opt.MapFrom(src => Guid.NewGuid())
+                );
+
+            CreateMap<TouristRouteForUpdateDto, TouristRoute>()
+                .AddTransform<string>(s => s ?? string.Empty);
+
+            CreateMap<TouristRoute, TouristRouteForUpdateDto>();
+
+            CreateMap<TouristRoute, TouristRouteSimplifyDto>()
+                .ForMember
+                (
+                dest => dest.Price,
+                opt => opt.MapFrom(src => src.OriginalPrice * (decimal)(src.DiscountPresent ?? 1))
+                );
+
         }
     }
 }

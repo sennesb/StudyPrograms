@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration and Login</title>
+</head>
+<body>
+    <h1>User Registration</h1>
+    <form action="/auth/register" method="post" enctype="application/json">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <h1>User Login</h1>
+    <form id="loginForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <div id="response"></div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var form = event.target;
+            var formData = new FormData(form);
+            var data = {};
+
+            for (var [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+
+            fetch("/auth/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => {
+                    console.log(response);
+                    // 处理响应数据
+
+
+                    var responseDiv = document.getElementById("response");
+                    if (response.ok) {
+                        response.text().then(text => {
+                            responseDiv.textContent = "登录成功！响应报文信息：" + text;
+                        });
+                    } else {
+                        responseDiv.textContent = "登录失败！错误码：" + response.status;
+                    }
+
+                })
+                .catch(error => {
+                    console.error(error);
+                    // 处理错误
+
+
+
+                });
+        });
+    </script>
+</body>
+</html>

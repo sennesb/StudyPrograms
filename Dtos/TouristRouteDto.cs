@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
+//数据输出Dto
+
 namespace FakeXiecheng.API.Dtos
 {
     public class TouristRouteDto
@@ -12,8 +14,8 @@ namespace FakeXiecheng.API.Dtos
         public string Description { get; set; }
         //
         public decimal Price { get; set; }//计算方式：原价 * 折扣
-        //public decimal OriginalPrice { get; set; }
-        //public double? DiscountPresent { get; set; }
+        public decimal OriginalPrice { get; set; }
+        public double? DiscountPresent { get; set; }
         public DateTime CreateTime { get; set; }
         public DateTime? UpdateTime { get; set; }
         public DateTime? DepartureTime { get; set; }

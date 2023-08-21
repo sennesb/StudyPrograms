@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\Visual Studio\\Program\\C#\\Projects\\WebApi\\FakeXiecheng.API\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.FakeXiecheng.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.FakeXiecheng.API.props",
+      "PackagePath": "build\\FakeXiecheng.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.FakeXiecheng.API.props",
+      "PackagePath": "buildMultiTargeting\\FakeXiecheng.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.FakeXiecheng.API.props",
+      "PackagePath": "buildTransitive\\FakeXiecheng.API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

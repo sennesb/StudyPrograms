@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "LoeIZkRR6orJcvIV9YvNz7j4F9jJCHngOLAzta6X+Pw=",
+  "Hash": "EC6V+8nxaaX2euCQAAB2P9QMc8d+8fy/PqPMcPB1C14=",
   "Source": "FakeXiecheng.API",
   "BasePath": "_content/FakeXiecheng.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "FakeXiecheng.API\\wwwroot",
+      "Source": "FakeXiecheng.API",
+      "ContentRoot": "E:\\Visual Studio\\Program\\C#\\Projects\\WebApi\\FakeXiecheng.API\\wwwroot\\",
+      "BasePath": "_content/FakeXiecheng.API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "E:\\Visual Studio\\Program\\C#\\Projects\\WebApi\\FakeXiecheng.API\\wwwroot\\index.html",
+      "SourceId": "FakeXiecheng.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Visual Studio\\Program\\C#\\Projects\\WebApi\\FakeXiecheng.API\\wwwroot\\",
+      "BasePath": "_content/FakeXiecheng.API",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
 }
